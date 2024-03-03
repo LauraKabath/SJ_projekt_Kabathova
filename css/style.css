@@ -1,0 +1,139 @@
+/* font a velkost pre cely obsah */
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 2.5rem
+}
+/* font a velkost pre cely obsah */
+
+/* menu-navigacia styl, umiestnenie*/
+.navbar {
+    z-index: 100;
+}
+.navbar a.nav-link:hover{
+    background-color: #394651;
+    text-decoration: none;
+}
+/* menu-navigacia styl, umiestnenie*/
+
+/*main margin*/
+main {
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 150px;
+    text-align: justify;
+}
+/*main margin*/
+
+/* carousel img*/
+.carousel-item img{
+    margin-top: 50px;
+    max-height: 650px;
+}
+/* carousel img*/
+
+/*blog_a-nastylovany ako btn*/
+.artBtn{
+    text-decoration: none;
+    border: solid 2px #803615;
+    background-color: #803615;
+}
+.artBtn:hover{
+    background-color: #D48B6A;
+}
+/*blog_a-nastylovany ako btn*/
+
+/*galeria lightbox*/
+.gallery-item{
+    margin: 10px;
+    cursor: pointer;
+    max-width: 700px;
+    max-height: 700px;
+}
+.lightgallery{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 250px;
+}
+.modal-content img{
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+/*galeria lightbox*/
+
+/*tabulka*/
+table p {
+    font-weight: normal;
+    text-align: justify;
+}
+/*tabulka*/
+
+/*strankovanie*/
+.page-link {
+    background-color: ghostwhite;
+    color: #551A00;
+}
+.page-link:hover{
+    color: #85BC5E;
+}
+/*strankovanie*/
+
+/*blog clanok_1*/
+.cl_1{
+    display: flex;
+    justify-content: space-around;
+    gap: 300px;
+}
+/*blog clanok_1*/
+
+/*blog clanok_2 img*/
+.sys_look{
+    max-width: 700px;
+    max-height: auto;
+}
+/*blog clanok_2 img*/
+
+/*footer styl*/
+.hlavny_footer{
+    background-color: #C1AEA5;
+    border: solid #7C6256;
+    color: #7C6256;
+}
+
+/*footer styl*/
+
+/*footer odkazy*/
+.hlavny_footer a{
+    background-color: #C1AEA5;
+    text-decoration: none;
+    color:#7C6256;
+}
+.hlavny_footer a:hover{
+    background-color: #7C6256;
+    height: auto;
+    color: #FFFAF7;
+}
+.spodny_footer{
+    background-color: #7C6256;
+    color: #C1AEA5;
+}
+/*footer odkazy*/
+
+/*thank you page*/
+.obrazok_thanks img{
+    max-width: 45%;
+    max-height: 50%;
+}
+.domov_btn{
+    text-decoration: none;
+    border: solid 2px #3A7113;
+    border-radius: 12px;
+    color: ghostwhite;
+    background-color: #3A7113;
+}
+.domov_btn:hover{
+    background-color: #85BC5E;
+}
+/*thank you page*/
