@@ -11,39 +11,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <header>
-            <!-- navigacia -->
-            <nav class="navbar navbar-expand-lg fixed-top bg-secondary" data-bs-theme="dark">
-                <div class="container-fluid text-center">
-                    <!-- logo -->
-                    <a class="navbar-brand text-uppercase text-white" href="index.html">
-                        <img src="" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    </a>
-                    <!-- logo -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse text-uppercase" id="navbarcollapse">
-                        <div class="navbar-nav mx-auto">
-                            <a class="nav-link text-white" href="index.html">Domov</a>
-                            <a class="nav-link text-white" href="o_nas.html"><ins>O nás</ins></a>
-                            <div class="dropdown">
-                              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Blog</a>
-                              <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="blog.html">Sysliareň</a>
-                                  <a class="dropdown-item" href="blog_1.html">Objavujeme tajomstvá hradu Muráň</a>
-                                  <a class="dropdown-item" href="blog_2.html">Sysle na Muránskej planine</a>
-                                  <a class="dropdown-item" href="blog_3.html">Sysle ako tajomné stvorenia prírody</a>
-                              </div>
-                          </div>
-                            <a class="nav-link text-white" href="galeria.html">Galéria</a>
-                            <a class="nav-link text-white" href="kontakt.html">Kontakt</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <!-- navigacia -->
-        </header>
+    <?php include "parts/header.php"?>
         <main>
           <section>
             <h1 class="mx-2">O nás</h1>
@@ -169,42 +137,6 @@
             </div>
             <!-- tabulka -->
         </main>
-        <!-- footer -->
-        <footer class="text-center text-lg-start text-muted border-2">
-          <section class="hlavny_footer">
-              <div class="container text-center text-md-start mt-5">
-                  <div class="row mt-3">
-                      <!-- zakladne info o stranke -->
-                      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                          <h6 class="text-uppercase fw-bold mb-4">Kto sme</h6>
-                          <p> Sme skupina nadšených milovníkov prírody a dobrodružstva, ktorí sa rozhodli zdieľať s vami pôvab a bohatstvo Muránskej planiny.</p>
-                      </div>
-                      <!-- zakladne info o stranke -->
-
-                      <!-- mailto,tel -->
-                      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                          <h6 class="text-uppercase fw-bold mb-4">Kontakt</h6>
-                          <p><i class="fa fa-map-marker"></i> Muránska 18, 050 01 Revúca</p>
-                          <p><i class="fa fa-envelope"></i><a href="mailto:mail.example@gmail.com"> muranska.turistika@gmail.com</a></p>
-                          <p><i class="fa fa-phone"></i><a href="tel:0904111222333"> 0904111222333</a></p>
-                      </div>
-                      <!-- mailto,tel -->
-                      <p class="text-center"> <strong>Rýchle odkazy:&emsp;</strong>
-                          <a href="index.html"><i class="fa fa-home">&emsp;</i></a>
-                          <a href="o_nas.html"><i class="fa fa-question-circle">&emsp;</i></a>
-                          <a href="blog.html"><i class="fa fa-sticky-note-o">&emsp;</i></a>
-                          <a href="galeria.html"><i class="fa fa-picture-o">&emsp;</i></a>
-                          <a href="kontakt.html"><i class="fa fa-phone-square">&emsp;</i></a>
-                      </p>
-                  </div>
-              </div>
-          </section>
-          <div class="spodny_footer text-center p-4">
-              <p>Copyright &copy; 2023 Laura Kabáthová</p>
-          </div>
-      </footer>
-      <!-- footer -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/app.js"></script>
+        <?php include "parts/footer.php"?>
     </body>
 </html>
