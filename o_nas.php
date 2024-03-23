@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html lang="sk">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Turistika na Muránskej planine">
-        <meta name="author" content="Laura Kabáthová">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>O nás - Turistika na Muránskej planine</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+    <?php include_once "parts/head.php"?>
     <body>
-    <?php include "parts/header.php"?>
+    <?php include "parts/navigacia.php" ?>
         <main>
           <section>
             <h1 class="mx-2">O nás</h1>
-            <p class="mx-4">&emsp;Vitajte na našej stránke venovanej turistike na krásnej Muránskej planine! Sme skupina nadšených milovníkov prírody a dobrodružstva, ktorí sa rozhodli zdieľať s vami pôvab a bohatstvo tejto jedinečnej oblasti Slovenska. 
+            <p class="mx-4">&emsp;Vitajte na našej stránke venovanej minerálom a horninám! Sme skupina nadšených milovníkov prírody a dobrodružstva, ktorí sa rozhodli zdieľať s vami pôvab týchto jedinečných nerastov.
               Či už ste dobrodružný turista, vášnivý prírodovedec alebo jednoducho hľadáte únik do prírody, naša stránka vám poskytne:</p>
               <!-- zoznam -->
               <ul>
                 <li>užitočné informácie,</li>
                 <li>tipy na turistiku,</li>
-                <li>inšpiráciu pre nezabudnuteľný pobyt na Muránskej planine.</li>
               </ul>
               <!-- zoznam -->
             <p class="mx-4">
-              &emsp;Pripravte sa na objavovanie krás divokej prírody, zachovaných zákutí a fascinujúcej histórie tohto úchvatného kúsku slovenského kraja. Spolu s nami sa vydajte na nezabudnuteľnú cestu turistiky po Muránskej planine!
+              &emsp;Spolu s nami sa vydajte na nezabudnuteľnú cestu!
             </p>
             <!-- akordeon -->
                 <div class="accordion mb-5" id="accordion">
@@ -78,7 +68,7 @@
             </section>
             <!-- akordeon -->
 
-            <!-- tabulka -->
+            <!-- tabulka
             <div class="container mb-4">
               <table class="table table-bordered border border-success text-center">
                 <thead>
@@ -135,7 +125,7 @@
                 </tbody>
               </table>
             </div>
-            <!-- tabulka -->
+             tabulka -->
         </main>
         <?php include "parts/footer.php"?>
     </body>

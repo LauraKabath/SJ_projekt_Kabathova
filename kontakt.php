@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html lang="sk">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Turistika na Muránskej planine">
-        <meta name="author" content="Laura Kabáthová">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kontakt - Turistika na Muránskej planine</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/kontakt.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+    <?php include_once "parts/head.php" ?>
     <body>
-    <?php include "parts/header.php"?>
+    <?php include "parts/navigacia.php" ?>
         <main>
             <section id="kontakt-forms">
                 <div class="container my-5">
@@ -31,7 +21,7 @@
                             <h5 class="fw-bold mb-2"><i class="fa fa-map-marker"></i> Adresa</h5>
                             <p>Muránska 18, 050 01 Revúca</p>
                             <h5 class="fw-bold mb-2"><i class="fa fa-envelope"></i> E-mailová adresa</h5>
-                            <p><a href="mailto:mail@example.com">muranska.turistika@gmail.com</a></p>
+                            <p><a href="mailto:mail@example.com">mineraly.horniny@gmail.com</a></p>
                             <h5 class="fw-bold mb-2"><i class="fa fa-phone"></i> Telefón</h5>
                             <p><a href="tel:0904111222333">0904 111 222 333</a></p>
                         </div>

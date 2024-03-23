@@ -14,7 +14,7 @@
                         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
                             <h6 class="text-uppercase fw-bold mb-4">Kontakt</h6>
                             <p><i class="fa fa-map-marker"></i> Muránska 18, 050 01 Revúca</p>
-                            <p><i class="fa fa-envelope"></i><a href="mailto:mail.example@gmail.com"> muranska.turistika@gmail.com</a></p>
+                            <p><i class="fa fa-envelope"></i><a href="mailto:mail.example@gmail.com"> mineraly.horniny@gmail.com</a></p>
                             <p><i class="fa fa-phone"></i><a href="tel:0904111222333"> 0904111222333</a></p>
                         </div>
                         <!-- mailto,tel -->

@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html lang="sk">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Turistika na Muránskej planine">
-        <meta name="author" content="Laura Kabáthová">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Blog - Turistika na Muránskej planine</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+    <?php include_once "parts/head.php" ?>
     <body>
-    <?php include "parts/header.php"?>
+    <?php include "parts/navigacia.php" ?>
         <main>
             <!-- banner s textom -->
             <div class="container mb-5">
@@ -30,29 +21,29 @@
                             <h2>Objavujeme tajomstvá hradu Muráň</h2>
                             <p class="text-muted">Zverejnene 24.11. 2023</p>
                             <p> TEXT </p>
-                            <a href="blog_1.html" class="artBtn btn rounded-4 text-white">Čítaj viac...</a>
+                            <a href="blog_1.php" class="artBtn btn rounded-4 text-white">Čítaj viac...</a>
                         </article>
                         <article class="clanok_2 p-4" id="blog_2">
                             <h2>Sysle na Muránskej planine</h2>
                             <p class="text-muted">Zverejnene 26.11. 2023</p>
                             <p>TEXT</p>
-                            <a href="blog_2.html" class="artBtn btn rounded-4 text-white">Čítaj viac...</a>
+                            <a href="blog_2.php" class="artBtn btn rounded-4 text-white">Čítaj viac...</a>
                         </article>
                         <article class="clanok_3 p-4" id="blog_3">
                             <h2>Sysle ako tajomné stvorenia prírody</h2>
                             <p class="text-muted">Zverejnene 27.11. 2023</p>
                             <p> TEXT </p>
-                            <a href="blog_3.html" class="artBtn btn rounded-4 text-white">Čítaj viac...</a>
+                            <a href="blog_3.php" class="artBtn btn rounded-4 text-white">Čítaj viac...</a>
                         </article>
                     </div>
             </section>
             <nav class="nav-pages d-flex justify-content-center my-3">
                 <div class="pagination strankovanie">
-                  <a class="page-link" href="blog.html">0</a>
-                  <a class="page-link" href="blog_1.html">1</a>
-                  <a class="page-link" href="blog_2.html">2</a>
-                  <a class="page-link" href="blog_3.html">3</a>
-                  <a class="page-link" href="blog_1.html">Nasledujúca</a>
+                  <a class="page-link" href="blog.php">0</a>
+                  <a class="page-link" href="blog_1.php">1</a>
+                  <a class="page-link" href="blog_2.php">2</a>
+                  <a class="page-link" href="blog_3.php">3</a>
+                  <a class="page-link" href="blog_1.php">Nasledujúca</a>
                 </div>
             </nav>
         </main>

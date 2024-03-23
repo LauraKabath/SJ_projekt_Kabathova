@@ -6,7 +6,7 @@ function submitForm(event) {
     const email = document.getElementById('email').value.trim();
     const gdpr = document.getElementById('check').checked;
 
-    window.location.href = 'thank_you.html';
+    window.location.href = 'thank_you.php';
 }
 /*validacia formulara*/
 
