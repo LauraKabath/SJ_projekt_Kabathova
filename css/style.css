@@ -70,31 +70,6 @@ table p {
 }
 /*tabulka*/
 
-/*strankovanie*/
-.page-link {
-    background-color: ghostwhite;
-    color: #551A00;
-}
-.page-link:hover{
-    color: #85BC5E;
-}
-/*strankovanie*/
-
-/*blog clanok_1*/
-.cl_1{
-    display: flex;
-    justify-content: space-around;
-    gap: 300px;
-}
-/*blog clanok_1*/
-
-/*blog clanok_2 img*/
-.sys_look{
-    max-width: 700px;
-    max-height: auto;
-}
-/*blog clanok_2 img*/
-
 /*footer styl*/
 .hlavny_footer{
     background-color: #C1AEA5;
