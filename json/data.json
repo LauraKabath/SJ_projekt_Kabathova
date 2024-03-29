@@ -1,0 +1,12 @@
+{
+  "stranky": {
+    "index": ["css/style.css"],
+    "o_nas": ["css/style.css"],
+    "mineraly": ["css/style.css"],
+    "horniny": ["css/style.css"],
+    "galeria": ["css/style.css"],
+    "kontakt": ["css/style.css", "css/kontakt.css"],
+    "prihlasenie": ["css/style.css"],
+    "thank_you": ["css/style.css"]
+  }
+}

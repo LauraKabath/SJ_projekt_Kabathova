@@ -10,7 +10,7 @@
                         <!-- kontaktne udaje -->
                         <h1 class="kontakt-nadpis text-center mb-4">Kontaktujte nás</h1>
                         <div class="container">
-                            <div class="alert alert-warning text-center mb-4" role="alert" id="Alert">
+                            <div class="alert alert-secondary text-center mb-4" role="alert" id="Alert">
                                 Polia označené * musia byť vyplnené
                                 <button type="button" class="close" onclick="zavriet()" aria-label="Close">
                                 <span aria-hidden="true">&times;</span> 

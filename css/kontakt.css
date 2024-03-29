@@ -2,47 +2,47 @@
 .close{
     cursor: pointer;
     border: 0px;
-    background-color:#fff3cd;
+    background-color:#f8f9fa;
     float: right;
 }
 .close:hover{
-    color: #FFC4AA;
+    color: #C1AEA5;
 }
 /*kontakt_formular umiestnenie,styl,polia*/
 form{
-    border: solid #551A00;
-    background-color: #D48B6A;
+    border: solid #7C6256;
+    background-color: #C1AEA5;
     color:ghostwhite;
 }
 .kontakt-nadpis{
     letter-spacing: 7px;
 }
 input[type=text],input[type=email]{
-    color: #551A00;
+    color: #7C6256;
     background-color: white;
-    border: solid #551A00;
+    border: solid #7C6256;
     border-radius: 12px;
 }
 textarea{
-    color: #551A00;
+    color: #7C6256;
     background-color: white;
-    border: solid #551A00;
+    border: solid #7C6256;
     resize: none;
     height: 150px;
 }
 input[type=checkbox]{
-    accent-color: #570E51 ;
+    accent-color: #7C6256;
     height: 20px ;
     width: 20px;
 }
 input[type=submit]{
     color: ghostwhite;
-    background-color: #551A00;
-    border: solid #551A00;
+    background-color: #7C6256;
+    border: solid #7C6256;
     text-transform: uppercase ;
 }
 input[type=submit]:hover{
-    color: #551A00;
-    background-color: #FFC4AA;
+    color: #7C6256;
+    background-color: #E8DBD5;
 }
 /*kontakt_formular umiestnenie,styl,polia*/

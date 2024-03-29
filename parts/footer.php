@@ -21,7 +21,6 @@
                         <p class="text-center"> <strong>Rýchle odkazy:&emsp;</strong>
                             <a href="index.php"><i class="fa fa-home">&emsp;</i></a>
                             <a href="o_nas.php"><i class="fa fa-question-circle">&emsp;</i></a>
-                            <a href="blog.php"><i class="fa fa-sticky-note-o">&emsp;</i></a>
                             <a href="galeria.php"><i class="fa fa-picture-o">&emsp;</i></a>
                             <a href="kontakt.php"><i class="fa fa-phone-square">&emsp;</i></a>
                         </p>

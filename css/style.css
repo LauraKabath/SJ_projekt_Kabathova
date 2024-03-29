@@ -32,17 +32,6 @@ main {
 }
 /* carousel img*/
 
-/*blog_a-nastylovany ako btn*/
-.artBtn{
-    text-decoration: none;
-    border: solid 2px #803615;
-    background-color: #803615;
-}
-.artBtn:hover{
-    background-color: #D48B6A;
-}
-/*blog_a-nastylovany ako btn*/
-
 /*galeria lightbox*/
 .gallery-item{
     margin: 10px;
