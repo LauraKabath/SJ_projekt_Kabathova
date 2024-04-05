@@ -19,7 +19,7 @@
                             <a class="nav-link text-white" href="horniny.php">Horniny</a>
                             <a class="nav-link text-white" href="galeria.php">Galéria</a>
                             <a class="nav-link text-white" href="kontakt.php">Kontakt</a>
-                            <a class="btn btn-outline-dark h-50 my-2" href="prihlasenie.php?tab=prihlasenie">Login</a>
+                            <a class="btn btn-outline-dark h-50 my-2" href="prihlasenie.php">Login</a>
                         </div>
                     </div>
                 </div>

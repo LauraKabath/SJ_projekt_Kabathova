@@ -5,7 +5,7 @@
         <header>
             <?php include "parts/navigacia.php" ?>
         <main>
-            <!-- kreativny bod: lightboxgallery -->
+            <!-- lightboxgallery -->
             <h1 class="text-center">Fotogaléria</h1>
             <div class="container m-5 ">
                 <div class="lightgallery">
@@ -36,17 +36,17 @@
                         <div class="row mb-4">
                             <div class="col-md-4">
                                 <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#Modal">
-                                    <img src="img/g_sys_piskota.jpg" alt="sysle maju piskotu" class="img-fluid p-5">
+                                    <img src="" alt="sysle maju piskotu" class="img-fluid p-5">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#Modal">
-                                    <img src="img/g_sys_vykuka.jpg" alt="sysel v diere" class="img-fluid p-5">
+                                    <img src="" alt="sysel v diere" class="img-fluid p-5">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#Modal">
-                                    <img src="img/g_sys_mrkva.jpg" alt="sysel si vychutnava mrkvu" class="img-fluid p-5">
+                                    <img src="" alt="sysel si vychutnava mrkvu" class="img-fluid p-5">
                                 </div>
                             </div>
                         </div>
@@ -59,17 +59,17 @@
                         <div class="row mb-4">
                             <div class="col-md-4">
                                 <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#Modal">
-                                    <img src="img/g_sys_sam_pri_piskotach.jpg" alt="sysel sam pri piskotach" class="img-fluid p-5">
+                                    <img src="" alt="sysel sam pri piskotach" class="img-fluid p-5">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#Modal">
-                                    <img src="img/g_sys_skrceny.jpg" alt="sysel skrceny na zemi" class="img-fluid p-5">
+                                    <img src="" alt="sysel skrceny na zemi" class="img-fluid p-5">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#Modal">
-                                    <img src="img/g_sys_zbiera.jpg" alt="sysel zbiera material" class="img-fluid p-5">
+                                    <img src="" alt="sysel zbiera material" class="img-fluid p-5">
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                     </div>
-            <!-- kreativny bod: lightboxgallery -->
+            <!-- lightboxgallery -->
         </main>
         <?php include "parts/footer.php"?>
     </body>
