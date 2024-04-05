@@ -10,7 +10,7 @@ function submitForm(event) {
 }
 /*validacia formulara*/
 
-/*kreativny bod: lighbox gallery*/
+/*lighbox gallery*/
 document.addEventListener('DOMContentLoaded', function () {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const lightboxImage = document.getElementById('lightboxImage');
@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-/*kreativny bod: lighbox gallery*/
+/*lighbox gallery*/
 
-/*kreativny bod: cookies*/
+/*cookies*/
 function accept() {
     document.cookie = "cookies_accepted=true";
     
@@ -37,4 +37,4 @@ function accept() {
   if (!check()) {
     document.getElementById("cookie-popup").style.display = "block";
   }
-/*kreativny bod: cookies*/
+/*cookies*/
