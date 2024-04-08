@@ -1,43 +1,27 @@
 <?php
 
 namespace log;
-require_once('../databaza/db_config.php');
+require_once(__ROOT__.'/classes/Database.php');
 
-use PDO;
-class Login{
-    private $conn;
+class Login extends \Database {
+    protected $connection;
 
     public function __construct(){
         $this->connect();
-    }
-
-    private function connect(){
-        $config = DATABASE;
-
-        $options = array(
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        );
-
-        try {
-            $this->conn = new PDO('mysql:host='.$config['HOST'].
-                ';dbname='.$config['DBNAME'].';port='.$config['PORT'],
-                $config['USER_NAME'], $config['PASSWORD'], $options);
-        } catch (\PDOException $e){
-            die("Chyba pripojenia: ".$e->getMessage());
-        }
+        // Pouzitie gettera na ziskanie spojenia
+        $this->connection = $this->getConnection();
     }
 
     public function register($meno, $heslo, $email){
         $query = "INSERT INTO tabuzivatel(meno, heslo, email) VALUES ('".$meno."',''".$heslo."','".$email."')";
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->connection->prepare($query);
 
         try {
             $insert = $stmt->execute();
             return $insert;
         } catch (\Exception $exception){
             echo "Chyba pri vkladani".$exception->getMessage();
-            $this->conn->rollback();
+            $this->connection->rollback();
         }
 
     }
