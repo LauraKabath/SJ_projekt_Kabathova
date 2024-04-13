@@ -1,35 +1,31 @@
 <?php
-define('__ROOT__', dirname(dirname(__FILE__)));
-require_once(__ROOT__.'/databaza/db_config.php');
 class Database {
 
-    private $conn;
+    private $host = 'localhost';
+    private $user_name = 'root';
+    private $password = '';
+    private $db_name = 'mineraly';
 
-    public function __construct() {
-        $this->connect();
+    protected $connection;
+
+    public function __destruct() {
+        // Uzatvorenie spojenia s databázou
+        $this->connection = null;
     }
 
-    protected function connect() {
-        $config = DATABASE;
-
-        $options = array(
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        );
-
+    protected function db_connection(){
         try {
-            $this->conn = new PDO('mysql:host='.$config['HOST'].
-                ';dbname='.$config['DBNAME'].';port='.$config['PORT'],
-                $config['USER_NAME'], $config['PASSWORD'], $options);
-        } catch (\PDOException $e) {
-            die("Chyba pripojenia: ".$e->getMessage());
+            $this->connection = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name . ";charset=utf8",
+                $this->user_name,
+                $this->password
+            );
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+            $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+
+            return $this->connection;
+        }catch(PDOException $e){
+            return 0;
+            die("Chyba pripojenia k databáze: " . $e->getMessage());
         }
     }
-
-    // Getter na ziskanie pripojenia
-    public function getConnection(){
-        return $this->connect();
-    }
-
-
 }

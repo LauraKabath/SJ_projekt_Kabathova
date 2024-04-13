@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="sk">
 <?php include_once "parts/head.php" ?>
@@ -22,41 +23,79 @@
                         <?php if(!isset($_GET['tab']) || $_GET['tab'] === 'prihlasenie'): ?>
                             <div class="login-form">
                                 <div class="prihlasenie-form">
-                                    <div class="form-group">
-                                        <label for="username" class="label">Meno: </label>
-                                        <input id="username" type="text" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password" class="label">Heslo: </label>
-                                        <input id="password" type="password" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="button btn btn-secondary">Prihlásiť</button>
-                                    </div>
+                                    <form action="" method="POST">
+                                        <div class="form-group">
+                                            <label for="meno" class="label">Meno: </label>
+                                            <input name="meno" id="meno" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="heslo" class="label">Heslo: </label>
+                                            <input name="heslo" id="heslo" type="password" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="login" class="button btn btn-secondary">Prihlásiť</button>
+                                        </div>
+                                    </form>
+                                    <?php
+                                    require_once "classes/Login.php";
+                                    if (isset($_POST['login'])) {
+                                        $meno = $_POST['meno'];
+                                        $heslo = $_POST['heslo'];
+
+                                        $login = new Login();
+
+                                        $user = $login->login($meno, $heslo);
+
+                                        if ($user) {
+                                            header("Location: dashboard.php");
+                                            exit();
+                                        } else {
+                                            echo "Nespravne prihlasovacie meno alebo heslo!";
+                                        }
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         <?php else: ?>
                             <div class="login-form">
                                 <div class="registracia-form">
-                                    <div class="form-group">
-                                        <label for="username" class="label">Meno: </label>
-                                        <input id="username" type="text" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password" class="label">Heslo: </label>
-                                        <input id="password" type="password" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password" class="label">Zopakujte heslo: </label>
-                                        <input id="password" type="password" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email" class="label">Email: </label>
-                                        <input id="email" type="email" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="button btn btn-secondary">Registrovať</button>
-                                    </div>
+                                    <form action="" method="POST">
+                                        <div class="form-group">
+                                            <label for="meno" class="label">Meno: </label>
+                                            <input name="meno" id="meno" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="heslo" class="label">Heslo: </label>
+                                            <input name="heslo" id="heslo" type="password" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="repeat_heslo" class="label">Zopakujte heslo: </label>
+                                            <input name="repeat_heslo" id="repeat_heslo" type="password" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="label">Email: </label>
+                                            <input name="email" id="email" type="email" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="register" class="button btn btn-secondary">Registrovať</button>
+                                        </div>
+                                    </form>
+                                    <?php
+                                    require_once "classes/Login.php";
+                                    if (isset($_POST['register'])){
+                                        $meno = $_POST['meno'];
+                                        $heslo = $_POST['heslo'];
+                                        $repeatHeslo = $_POST['repeat_heslo'];
+                                        $email = $_POST['email'];
+
+                                        $login = new Login();
+                                        if ($login->register($meno, $heslo, $repeatHeslo, $email)) {
+                                            echo "Registracia bola uspesna!";
+                                        } else {
+                                            echo "Hesla sa nezhoduju!";
+                                        }
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -69,3 +108,4 @@
 <?php include "parts/footer.php"?>
 </body>
 </html>
+<?php ob_end_flush(); ?>
