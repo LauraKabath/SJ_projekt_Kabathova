@@ -1,27 +1,52 @@
 <?php
 
-namespace log;
 require_once(__ROOT__.'/classes/Database.php');
 
 class Login extends \Database {
-    protected $connection;
+    private $conn;
 
     public function __construct(){
-        $this->connect();
-        // Pouzitie gettera na ziskanie spojenia
-        $this->connection = $this->getConnection();
+        $this->conn = $this->db_connection();
     }
 
-    public function register($meno, $heslo, $email){
-        $query = "INSERT INTO tabuzivatel(meno, heslo, email) VALUES ('".$meno."',''".$heslo."','".$email."')";
-        $stmt = $this->connection->prepare($query);
+    public function register($meno, $heslo, $repeatHeslo , $email){
+
+        if ($heslo !== $repeatHeslo){
+            echo "Nespravne zadane heslo";
+            return false;
+        }
+
+        $query = "INSERT INTO tabuzivatel(meno, heslo, email) VALUES (:meno, :heslo, :email)";
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(':meno', $meno);
+        $stmt->bindParam(':heslo', $heslo);
+        $stmt->bindParam(':email', $email);
 
         try {
             $insert = $stmt->execute();
             return $insert;
         } catch (\Exception $exception){
             echo "Chyba pri vkladani".$exception->getMessage();
-            $this->connection->rollback();
+            $this->conn->rollback();
+        }
+
+    }
+
+    public function login($meno, $heslo){
+        $query = "SELECT * FROM tabuzivatel WHERE meno = :meno AND heslo = :heslo";
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(':meno', $meno);
+        $stmt->bindParam(':heslo', $heslo);
+
+        try {
+            $stmt->execute();
+            $userdata = $stmt->fetch();
+            return $userdata;
+        } catch (\Exception $exception){
+            echo "Chyba pri prihlasovani".$exception->getMessage();
+            $this->conn->rollback();
         }
 
     }
