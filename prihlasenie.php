@@ -1,7 +1,12 @@
 <?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="sk">
-<?php include_once "parts/head.php" ?>
+<?php
+include_once "parts/head.php";
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
+    header('Location: dashboard.php');
+}
+?>
 <body>
 <?php include "parts/navigacia.php" ?>
 <main>
@@ -37,7 +42,7 @@
                                         </div>
                                     </form>
                                     <?php
-                                    require_once "classes/Login.php";
+
                                     if (isset($_POST['login'])) {
                                         $meno = $_POST['meno'];
                                         $heslo = $_POST['heslo'];
@@ -84,7 +89,7 @@
                                         </div>
                                     </form>
                                     <?php
-                                    require_once "classes/Login.php";
+
                                     if (isset($_POST['register'])){
                                         $meno = $_POST['meno'];
                                         $heslo = $_POST['heslo'];

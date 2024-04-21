@@ -20,10 +20,16 @@
                                     'Horniny' => 'horniny.php',
                                     'Kontakt' => 'kontakt.php'
                                 );
+
                                 $menu_pages = new Menu($stranky);
                                 echo($menu_pages->generateMenu());
+
+                                if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
+                                    echo '<a class="btn btn-outline-dark h-50 my-2" href="odhlasenie.php">Logout</a>';
+                                } else {
+                                    echo '<a class="btn btn-outline-dark h-50 my-2" href="prihlasenie.php">Login</a>';
+                                }
                             ?>
-                            <a class="btn btn-outline-dark h-50 my-2" href="prihlasenie.php">Login</a>
                         </div>
                     </div>
                 </div>
