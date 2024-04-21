@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="sk">
-<?php include_once "parts/head.php" ?>
+<?php include_once "parts/head.php";
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: prihlasenie.php");
+    exit;
+}
+// $user_id
+?>
+
 <body>
 <?php include "parts/navigacia.php" ?>
 <main>

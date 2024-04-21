@@ -45,6 +45,7 @@ class Login extends \Database {
 
             if ($userdata){
                 if (password_verify($heslo, $userdata['heslo'])){
+                    $_SESSION['logged_in'] = true;
                     return true;
                 } else {
                     return false;
