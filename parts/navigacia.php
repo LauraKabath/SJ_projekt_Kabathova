@@ -13,12 +13,16 @@
             </button>
                 <div class="collapse navbar-collapse text-uppercase" id="navbarcollapse">
                         <div class="navbar-nav mx-auto">
-                            <a class="nav-link text-white" href="index.php"><i class="fa fa-home"></i> Domov</a>
-                            <a class="nav-link text-white" href="o_nas.php">O nás</a>
-                            <a class="nav-link text-white" href="mineraly.php">Minerály</a>
-                            <a class="nav-link text-white" href="horniny.php">Horniny</a>
-                            <a class="nav-link text-white" href="galeria.php">Galéria</a>
-                            <a class="nav-link text-white" href="kontakt.php">Kontakt</a>
+                            <?php
+                                $stranky = array('Domov'=> 'index.php',
+                                    'O nás' => 'o_nas.php',
+                                    'Minerály' => 'mineraly.php',
+                                    'Horniny' => 'horniny.php',
+                                    'Kontakt' => 'kontakt.php'
+                                );
+                                $menu_pages = new Menu($stranky);
+                                echo($menu_pages->generateMenu());
+                            ?>
                             <a class="btn btn-outline-dark h-50 my-2" href="prihlasenie.php">Login</a>
                         </div>
                     </div>

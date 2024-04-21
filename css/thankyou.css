@@ -1,0 +1,16 @@
+/*thank you page*/
+.obrazok_thanks img{
+    max-width: 45%;
+    max-height: 50%;
+}
+.domov_btn{
+    text-decoration: none;
+    border: solid 2px #3A7113;
+    border-radius: 12px;
+    color: ghostwhite;
+    background-color: #3A7113;
+}
+.domov_btn:hover{
+    background-color: #85BC5E;
+}
+/*thank you page*/

@@ -32,26 +32,6 @@ main {
 }
 /* carousel img*/
 
-/*galeria lightbox*/
-.gallery-item{
-    margin: 10px;
-    cursor: pointer;
-    max-width: 700px;
-    max-height: 700px;
-}
-.lightgallery{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 250px;
-}
-.modal-content img{
-    width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-}
-/*galeria lightbox*/
-
 /*tabulka*/
 table p {
     font-weight: normal;
@@ -84,20 +64,3 @@ table p {
     color: #C1AEA5;
 }
 /*footer odkazy*/
-
-/*thank you page*/
-.obrazok_thanks img{
-    max-width: 45%;
-    max-height: 50%;
-}
-.domov_btn{
-    text-decoration: none;
-    border: solid 2px #3A7113;
-    border-radius: 12px;
-    color: ghostwhite;
-    background-color: #3A7113;
-}
-.domov_btn:hover{
-    background-color: #85BC5E;
-}
-/*thank you page*/

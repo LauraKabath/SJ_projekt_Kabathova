@@ -46,11 +46,14 @@
 
                                         $user = $login->login($meno, $heslo);
 
-                                        if ($user) {
+                                        if ($user === true) {
                                             header("Location: dashboard.php");
                                             exit();
-                                        } else {
-                                            echo "Nespravne prihlasovacie meno alebo heslo!";
+                                        } elseif ($user === false) {
+                                            echo "Nesprávne prihlasovacie meno alebo heslo!";
+                                        } elseif ($user === "neregistrovany") {
+                                            echo "Užívateľ sa nenašiel. Prosím zaregistrujte sa.";
+                                            echo '<a class="btn btn-outline-secondary h-50 my-2" href="prihlasenie.php?tab=registracia">Registrácia</a>';
                                         }
                                     }
                                     ?>
