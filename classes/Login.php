@@ -1,7 +1,5 @@
 <?php
 
-require_once(__ROOT__.'/classes/Database.php');
-
 class Login extends \Database {
     private $conn;
 
@@ -16,11 +14,14 @@ class Login extends \Database {
             return false;
         }
 
+        $hashedPassword = password_hash($heslo, PASSWORD_DEFAULT);
+
         $query = "INSERT INTO tabuzivatel(meno, heslo, email) VALUES (:meno, :heslo, :email)";
         $stmt = $this->conn->prepare($query);
 
+
         $stmt->bindParam(':meno', $meno);
-        $stmt->bindParam(':heslo', $heslo);
+        $stmt->bindParam(':heslo', $hashedPassword);
         $stmt->bindParam(':email', $email);
 
         try {
@@ -34,16 +35,23 @@ class Login extends \Database {
     }
 
     public function login($meno, $heslo){
-        $query = "SELECT * FROM tabuzivatel WHERE meno = :meno AND heslo = :heslo";
+        $query = "SELECT * FROM tabuzivatel WHERE meno = :meno";
         $stmt = $this->conn->prepare($query);
-
         $stmt->bindParam(':meno', $meno);
-        $stmt->bindParam(':heslo', $heslo);
 
         try {
             $stmt->execute();
             $userdata = $stmt->fetch();
-            return $userdata;
+
+            if ($userdata){
+                if (password_verify($heslo, $userdata['heslo'])){
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return "neregistrovany";
+            }
         } catch (\Exception $exception){
             echo "Chyba pri prihlasovani".$exception->getMessage();
             $this->conn->rollback();
