@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="sk">
     <?php include_once "parts/head.php" ?>
@@ -29,41 +30,42 @@
 
                             <!-- formular -->
                         <div class="col-lg-6">
-                            <form class="w-75 p-4 border-3 rounded-0" onsubmit="submitForm(event)">
-                                <!-- pole: meno -->
+                            <form class="w-75 p-4 border-3 rounded-0" action="" method="POST">
                                 <div class="form-group">
                                     <label for="name">Meno a prezvisko*:</label><br>
                                     <input type="text" id="name" name="name" value="" class="w-100 p-1 border-2 rounded-4" required><br>
                                 </div>
-                                <!-- pole: meno -->
-
-                                <!-- pole: email -->
                                 <div class="form-group">
                                     <label for="email">Email*:</label><br>
                                     <input type="email" id="email" name="email" value="" class="w-100 p-1 border-2 rounded-4" required><br>
                                 </div>
-                                <!-- pole: email -->
-                                
-                                <!-- pole: poznamka -->
                                 <div class="form-group">
                                     <label for="notes">Poznámka:</label><br>
                                     <textarea id="notes" name="notes" placeholder="Sem napíšte svoje poznámky..." class="w-100 p-1 border-2 rounded-4"></textarea><br>
                                 </div>
-                                <!-- pole: poznamka -->
-
-                                <!-- pole: checkbox -->
                                 <div class="form-group">
                                     <input id="check" type="checkbox" class="GDPR" required>
                                     <label for="check">Súhlas so spracovaním osobných údajov*</label><br>
                                 </div>
-                                <!-- pole: checkbox -->
-
-                                <!-- pole: submit -->
                                 <div class="form-group"> 
                                     <label for="submit"></label><br>
-                                    <input id="submit" type="submit" value="Odoslať" class="btn rounded-3" onclick="validate()"><br>
+                                    <input id="submit" name="submit" type="submit" value="Odoslať" class="btn rounded-3"><br>
                                 </div>
-                                 <!-- pole: submit -->
+                                <?php
+                                if (isset($_POST['submit'])) {
+                                    $meno = $_POST['name'];
+                                    $email = $_POST['email'];
+                                    $notes = $_POST['notes'];
+
+                                    $form = new Kontakt();
+                                    if ($form->addNote($meno, $email, $notes)) {
+                                        header("Location: thank_you.php");
+                                    } else {
+                                        echo 'Nastala chyba pri odosielaní formulára';
+                                    }
+                                }
+                                ?>
+
                             </form>
                         </div>
                          <!-- formular -->
@@ -75,3 +77,4 @@
         <script src="js/kontakt_validate.js"></script>
     </body>
 </html>
+<?php ob_end_flush(); ?>
