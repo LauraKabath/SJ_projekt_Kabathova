@@ -5,12 +5,12 @@
 }
 .domov_btn{
     text-decoration: none;
-    border: solid 2px #3A7113;
+    border: solid 2px #7C6256;
     border-radius: 12px;
     color: ghostwhite;
-    background-color: #3A7113;
+    background-color: #7C6256;
 }
 .domov_btn:hover{
-    background-color: #85BC5E;
+    background-color: #E8DBD5;
 }
 /*thank you page*/
