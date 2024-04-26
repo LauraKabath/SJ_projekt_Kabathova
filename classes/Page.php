@@ -19,6 +19,8 @@ class Page {
             case 'thank_you':
                 $css .= '<link rel="stylesheet" href="css/thankyou.css">';
                 break;
+            case 'prihlasenie':
+                $css .= '<link rel="stylesheet" href="css/password.css">';
         }
 
         return $css;

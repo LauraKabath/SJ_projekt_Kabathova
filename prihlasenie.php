@@ -1,6 +1,4 @@
 <?php ob_start(); ?>
-<!DOCTYPE html>
-<html lang="sk">
 <?php
 include_once "parts/head.php";
 if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
@@ -35,7 +33,10 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                                         </div>
                                         <div class="form-group">
                                             <label for="heslo" class="label">Heslo: </label>
-                                            <input name="heslo" id="heslo" type="password" class="form-control">
+                                            <div class="password-input">
+                                                <input name="heslo" id="heslo" type="password" class="form-control">
+                                                <span class="toggle-password" onclick="togglePasswordVisibility('heslo')">Show</span>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" name="login" class="button btn btn-secondary">Prihlásiť</button>
@@ -74,11 +75,17 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                                         </div>
                                         <div class="form-group">
                                             <label for="heslo" class="label">Heslo: </label>
-                                            <input name="heslo" id="heslo" type="password" class="form-control">
+                                            <div class="password-input">
+                                                <input name="heslo" id="heslo" type="password" class="form-control">
+                                                <span class="toggle-password" onclick="togglePasswordVisibility('heslo')">Show</span>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="repeat_heslo" class="label">Zopakujte heslo: </label>
-                                            <input name="repeat_heslo" id="repeat_heslo" type="password" class="form-control">
+                                            <div class="password-input">
+                                                <input name="repeat_heslo" id="repeat_heslo" type="password" class="form-control">
+                                                <span class="toggle-password" onclick="togglePasswordVisibility('repeat_heslo')">Show</span>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="email" class="label">Email: </label>
@@ -114,6 +121,4 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     </div>
 </main>
 <?php include "parts/footer.php"?>
-</body>
-</html>
 <?php ob_end_flush(); ?>

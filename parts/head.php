@@ -1,9 +1,11 @@
 <?php
     require_once('db_config.php');
 ?>
+<!DOCTYPE html>
+<html lang="sk">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Turistika na Muránskej planine">
+    <meta name="description" content="Minerály a horniny">
     <meta name="author" content="Laura Kabáthová">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minerály a horniny</title>

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="sk">
-    <?php include_once "parts/head.php" ?>
+<?php include_once "parts/head.php" ?>
     <body>
     <?php include "parts/navigacia.php" ?>
         <!-- carousel/slideshow -->
@@ -62,6 +60,4 @@
             Táto webová stránka používa súbory cookie, aby sme vám zabezpečili čo najlepší zážitok z našej webovej stránky.
             <button type="button" class="btn btn-light btn-sm" onclick="accept()">Rozumiem!</button>
         </div>
-        <?php include "parts/footer.php"?>
-    </body>
-</html>
+<?php include "parts/footer.php"?>

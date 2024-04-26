@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="sk">
 <?php include_once "parts/head.php";
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     header("Location: prihlasenie.php");
@@ -13,23 +11,30 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 <main>
     <section>
         <h1>Vitaj, user!</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="" class="card-img-top" alt="mineral">
-                        <div class="card-body">
-                            <h3 class="card-title text-center">Názov</h3>
-                            <p class="card-text"><strong>Popis: </strong></p>
-                            <p class="card-text"><strong>Použitie: </strong></p>
-                            <p class="card-text"><strong>Výskyt: </strong></p>
-                        </div>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="card">
+                    <div class="card-header">
+
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" value="">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </section>
 </main>
 <?php include "parts/footer.php"?>
-</body>
-</html>

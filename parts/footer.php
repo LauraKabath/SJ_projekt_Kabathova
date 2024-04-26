@@ -19,10 +19,11 @@
                         </div>
                         <!-- mailto,tel -->
                         <p class="text-center"> <strong>Rýchle odkazy:&emsp;</strong>
-                            <a href="index.php"><i class="fa fa-home">&emsp;</i></a>
-                            <a href="o_nas.php"><i class="fa fa-question-circle">&emsp;</i></a>
-                            <a href="galeria.php"><i class="fa fa-picture-o">&emsp;</i></a>
-                            <a href="kontakt.php"><i class="fa fa-phone-square">&emsp;</i></a>
+                            <a href="index.php"><i class="fa fa-home">Domov&emsp;</i></a>
+                            <a href="o_nas.php"><i class="fa fa-question-circle">O nás&emsp;</i></a>
+                            <a href="mineraly.php">Minerály&emsp;</a>
+                            <a href="horniny.php">Horniny&emsp;</a>
+                            <a href="kontakt.php"><i class="fa fa-phone-square">Kontakt&emsp;</i></a>
                         </p>
                     </div>
                 </div>
@@ -34,3 +35,6 @@
         <!-- footer -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/password.js"></script>
+</body>
+</html>

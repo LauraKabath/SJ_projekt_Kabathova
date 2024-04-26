@@ -20,15 +20,16 @@
                                     'Horniny' => 'horniny.php',
                                     'Kontakt' => 'kontakt.php'
                                 );
-
-                                $menu_pages = new Menu($stranky);
-                                echo($menu_pages->generateMenu());
-
                                 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
-                                    echo '<a class="btn btn-outline-dark h-50 my-2" href="odhlasenie.php">Logout</a>';
+                                    $stranky['Profil'] = 'dashboard.php';
+                                    $buttons = array('Logout' => 'odhlasenie.php');
                                 } else {
-                                    echo '<a class="btn btn-outline-dark h-50 my-2" href="prihlasenie.php">Login</a>';
+                                    $buttons = array('Login' => 'prihlasenie.php');
                                 }
+                                $menu_pages = new Menu($stranky);
+
+                                echo($menu_pages->generateMenu($buttons));
+
                             ?>
                         </div>
                     </div>
