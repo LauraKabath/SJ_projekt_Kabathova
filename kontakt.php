@@ -1,7 +1,5 @@
 <?php ob_start(); ?>
-<!DOCTYPE html>
-<html lang="sk">
-    <?php include_once "parts/head.php" ?>
+<?php include_once "parts/head.php" ?>
     <body>
     <?php include "parts/navigacia.php" ?>
         <main>
@@ -75,6 +73,4 @@
         </main>
         <?php include "parts/footer.php"?>
         <script src="js/kontakt_validate.js"></script>
-    </body>
-</html>
 <?php ob_end_flush(); ?>

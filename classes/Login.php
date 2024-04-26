@@ -1,6 +1,6 @@
 <?php
 
-class Login extends \Database {
+class Login extends Database {
     private $conn;
 
     public function __construct(){
@@ -14,7 +14,7 @@ class Login extends \Database {
             return false;
         }
 
-        $hashedPassword = password_hash($heslo, PASSWORD_DEFAULT);
+        $hashedPassword = password_hash($heslo, PASSWORD_BCRYPT);
 
         $query = "INSERT INTO tabuzivatel(meno, heslo, email) VALUES (:meno, :heslo, :email)";
         $stmt = $this->conn->prepare($query);
@@ -41,9 +41,9 @@ class Login extends \Database {
 
         try {
             $stmt->execute();
-            $userdata = $stmt->fetch();
+            $userdata = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($userdata){
+            if ($stmt->rowCount() > 0){
                 if (password_verify($heslo, $userdata['heslo'])){
                     $_SESSION['logged_in'] = true;
                     return true;

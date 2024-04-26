@@ -12,7 +12,7 @@ class Kontakt extends Database {
         $query = "INSERT INTO tabkontakt(meno, email, poznamka) VALUES(:name, :email, :notes)";
 
         $stmt = $this->conn->prepare($query);
-        
+
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':notes', $notes);

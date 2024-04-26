@@ -1,28 +1,3 @@
-/*validacia formulara*/
-function submitForm(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const gdpr = document.getElementById('check').checked;
-
-    window.location.href = 'thank_you.php';
-}
-/*validacia formulara*/
-
-/*lighbox gallery*/
-document.addEventListener('DOMContentLoaded', function () {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightboxImage = document.getElementById('lightboxImage');
-    galleryItems.forEach(function (item) {
-        item.addEventListener('click', function () {
-            const imageSrc = item.querySelector('img').src;
-            lightboxImage.src = imageSrc;
-        });
-    });
-});
-/*lighbox gallery*/
-
 /*cookies*/
 function accept() {
     document.cookie = "cookies_accepted=true";

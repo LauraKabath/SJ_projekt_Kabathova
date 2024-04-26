@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="sk">
-    <?php include_once "parts/head.php"?>
+<?php include_once "parts/head.php"?>
     <body>
     <?php include "parts/navigacia.php" ?>
         <main>
@@ -127,6 +125,4 @@
             </div>
              tabulka -->
         </main>
-        <?php include "parts/footer.php"?>
-    </body>
-</html>
+    <?php include "parts/footer.php"?>
