@@ -56,10 +56,8 @@
 
                             $filename = $_FILES["uploadfile"]["name"];
                             $tempname = $_FILES["uploadfile"]["tmp_name"];
-                            $folder = "upload/" . $filename;
-                            move_uploaded_file($tempname, $folder);
 
-                           if ($mineralObject->addMineral($nazov, $zlozenie, $vzorec, $sustava, $popis, $pouzitie, $naleziska, $filename)){
+                           if ($mineralObject->addMineral($nazov, $zlozenie, $vzorec, $sustava, $popis, $pouzitie, $naleziska, $filename, $tempname)){
                                echo "Mineral bol úspešne pridaný";
                            } else {
                                echo 'Nastala chyba pri pridávaní minerálu';

@@ -7,25 +7,27 @@ class Minerals extends Database {
         $this->conn = $this->db_connection();
     }
 
-    private function addPhoto($filename){
-        $query = "INSERT INTO tabmineraly(fotka) VALUES(:filename)";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':filename', $filename);
-
+    private function movePhoto($filename, $tempname){
+        $folder = "./upload/".$filename;
         try {
-            $insert = $stmt->execute();
-            return $insert;
+            $this->conn->beginTransaction();
+            if (!move_uploaded_file($tempname, $folder)){
+                throw new Exception("Súbor sa nepodarilo premiestniť");
+            }
+            $this->conn->commit();
+            return true;
         } catch (\Exception $exception){
-            echo "Chyba pri vkladani fotky".$exception->getMessage();
             $this->conn->rollback();
+            echo "Chyba pri vkladani fotky".$exception->getMessage();
+            return false;
         }
 
     }
 
-    public function addMineral($nazov, $zlozenie, $vzorec, $sustava, $popis, $pouzitie, $naleziska, $filename){
+    public function addMineral($nazov, $zlozenie, $vzorec, $sustava, $popis, $pouzitie, $naleziska, $filename, $tempname){
 
-        $query = "INSERT INTO tabmineraly(min_nazov, chemzlozenie, vzorec, krysustava, popis, pouzitie, naleziska) 
-        VALUES (:nazov, :zlozenie, :vzorec, :sustava, :popis, :pouzitie, :naleziska)";
+        $query = "INSERT INTO tabmineraly(min_nazov, chemzlozenie, vzorec, krysustava, popis, pouzitie, naleziska, fotka) 
+        VALUES (:nazov, :zlozenie, :vzorec, :sustava, :popis, :pouzitie, :naleziska, :filename)";
 
         $stmt = $this->conn->prepare($query);
 
@@ -36,8 +38,8 @@ class Minerals extends Database {
         $stmt->bindParam(':popis', $popis);
         $stmt->bindParam(':pouzitie', $pouzitie);
         $stmt->bindParam(':naleziska', $naleziska);
-
-        $this->addPhoto($filename);
+        $stmt->bindParam(':filename', $filename);
+        $this->movePhoto($filename, $tempname);
 
         try {
             $insert = $stmt->execute();
