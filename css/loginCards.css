@@ -1,0 +1,42 @@
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    border: none;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.password-input {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.button {
+    cursor: pointer;
+}

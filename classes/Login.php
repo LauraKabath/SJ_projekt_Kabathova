@@ -46,6 +46,7 @@ class Login extends Database {
             if ($stmt->rowCount() > 0){
                 if (password_verify($heslo, $userdata['heslo'])){
                     $_SESSION['logged_in'] = true;
+                    $_SESSION['user_id'] = $userdata['uzi_ID'];
                     return true;
                 } else {
                     return false;
