@@ -20,7 +20,8 @@ class Page {
                 $css .= '<link rel="stylesheet" href="css/thankyou.css">';
                 break;
             case 'prihlasenie':
-                $css .= '<link rel="stylesheet" href="css/password.css">';
+                $css .= '<link rel="stylesheet" href="css/loginCards.css">';
+                break;
         }
 
         return $css;
