@@ -7,7 +7,7 @@
     if ($mineralObject->isLoggedIn()){
     ?>
     <section>
-        <div class="container mt-5">
+        <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form action="" method="POST" enctype="multipart/form-data">
@@ -28,12 +28,12 @@
                             <input type="text" class="form-control" id="vzorec" name="vzorec">
                         </div>
                         <div class="form-group">
-                            <label for="sustava">Kryštalová sústava:</label>
+                            <label for="sustava">Kryštálová sústava:</label>
                             <input type="text" class="form-control" id="sustava" name="sustava">
                         </div>
                         <div class="form-group">
                             <label for="popis">Popis:</label>
-                            <textarea class="form-control" id="popis" name="popis" rows="3"></textarea>
+                            <textarea class="form-control" id="popis" name="popis" rows="4"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="pouzitie">Použitie:</label>

@@ -51,7 +51,7 @@ class Minerals extends Database {
     }
 
     public function selectMineral(){
-        $query = "SELECT min_nazov, chemzlozenie, vzorec, krysustava, popis, pouzitie, naleziska, fotka FROM tabmineraly ";
+        $query = "SELECT min_nazov, chemzlozenie, vzorec, krysustava, popis, pouzitie, naleziska, fotka, min_ID FROM tabmineraly ";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $minerals = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -76,6 +76,7 @@ class Minerals extends Database {
             $mineralCards .= '<p class="card-text"><strong>Popis:</strong> ' . $mineral['popis'] . '</p>';
             $mineralCards .= '<p class="card-text"><strong>Použitie:</strong> ' . $mineral['pouzitie'] . '</p>';
             $mineralCards .= '<p class="card-text"><strong>Náleziská:</strong> ' . $mineral['naleziska'] . '</p>';
+            if ($this->isLoggedIn()) $mineralCards .= '<a href="update_mineral.php?id=' . $mineral['min_ID'] . '" class="link-secondary link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a>';
             $mineralCards .= '</div>';
             $mineralCards .= '</div>';
             $mineralCards .= '</div>';
@@ -90,6 +91,61 @@ class Minerals extends Database {
     public function isLoggedIn(){
         return isset($_SESSION['user_id']);
 
+    }
+
+    public function getMineralById($mineral_id) {
+        $query = "SELECT * FROM tabmineraly WHERE min_ID = :mineral_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':mineral_id', $mineral_id);
+
+        try {
+            $stmt->execute();
+            $mineral = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $mineral;
+        } catch (PDOException $e) {
+            echo "Nastala chyba pri získavaní minerálu " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function updateMineral($mineral_id, $nazov, $zlozenie, $vzorec, $sustava, $popis, $pouzitie, $naleziska){
+        $query = "UPDATE tabmineraly SET 
+        min_nazov = :nazov, chemzlozenie = :zlozenie, vzorec = :vzorec, krysustava :sustava, popis = :popis, pouzitie = :pouzitie, naleziska = :naleziska 
+        WHERE min_ID = :id";
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(':nazov', $nazov);
+        $stmt->bindParam(':zlozenie', $zlozenie);
+        $stmt->bindParam(':vzorec', $vzorec);
+        $stmt->bindParam(':sustava', $sustava);
+        $stmt->bindParam(':popis', $popis);
+        $stmt->bindParam(':pouzitie', $pouzitie);
+        $stmt->bindParam(':naleziska', $naleziska);
+        $stmt->bindParam(':id', $mineral_id);
+
+        try {
+            $update = $stmt->execute();
+            return $update;
+        } catch (\Exception $exception){
+            echo "Chyba pri updatovani".$exception->getMessage();
+            $this->conn->rollback();
+        }
+
+    }
+
+    public function deleteMineral($mineral_id){
+        $query = "DELETE FROM tabmineraly WHERE min_ID = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $mineral_id);
+
+        try {
+            $delete = $stmt->execute();
+            return $delete;
+        } catch (\Exception $exception){
+            echo "Chyba pri odstranovani".$exception->getMessage();
+            $this->conn->rollback();
+        }
     }
 
 
