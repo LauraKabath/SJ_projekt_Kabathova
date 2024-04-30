@@ -16,3 +16,4 @@ require_once('classes/Kontakt.php');
 require_once('classes/Login.php');
 require_once('classes/User.php');
 require_once('classes/Minerals.php');
+require_once('classes/Rocks.php');
