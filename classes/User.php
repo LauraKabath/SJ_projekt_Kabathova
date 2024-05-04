@@ -23,7 +23,23 @@ private $conn;
 
     }
 
-    public function updateProfil(){
+    public function updateProfil($id, $meno, $email){
+        $query = "UPDATE tabuzivatel SET meno = :meno, email = :email WHERE uzi_ID = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':meno', $meno);
+        $stmt->bindParam(':email', $email);
+
+        try {
+            $update = $stmt->execute();
+            return $update;
+        } catch (\Exception $exception){
+            echo "Chyba pri updatovani".$exception->getMessage();
+            $this->conn->rollback();
+        }
+    }
+
+    public function changePassword(){
         return true;
     }
 

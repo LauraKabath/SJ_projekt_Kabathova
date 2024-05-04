@@ -33,6 +33,7 @@ class Rocks extends Database {
         $stmt->bindParam(':zaradenie', $zaradenie);
         $stmt->bindParam(':farba', $farba);
         $stmt->bindParam(':zasMineraly', $zasMineraly);
+        $stmt->bindParam(':stavba', $stavba);
         $stmt->bindParam(':naleziska', $naleziska);
         $stmt->bindParam(':filename', $filename);
         $this->movePhoto($filename, $tempname);
@@ -99,6 +100,59 @@ class Rocks extends Database {
         } catch (PDOException $e) {
             echo "Nastala chyba pri získavaní horniny " . $e->getMessage();
             return false;
+        }
+    }
+
+    public function updateRock($rock_id, $nazov, $zaradenie, $farba, $zasMineraly, $stavba, $naleziska){
+        $query = "UPDATE tabhorniny SET
+        rock_nazov = :nazov, zaradenie = :zaradenie, farba = :farba, zas_min = :zasMineraly, stavba = :stavba, naleziska = :naleziska
+        WHERE rock_ID = :rock_id";
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(':nazov', $nazov);
+        $stmt->bindParam(':zaradenie', $zaradenie);
+        $stmt->bindParam(':farba', $farba);
+        $stmt->bindParam(':zasMineraly', $zasMineraly);
+        $stmt->bindParam(':stavba', $stavba);
+        $stmt->bindParam(':naleziska', $naleziska);
+        $stmt->bindParam(':rock_id', $rock_id);
+
+        try {
+            $update = $stmt->execute();
+            return $update;
+        } catch (\Exception $exception){
+            echo "Chyba pri updatovani".$exception->getMessage();
+            $this->conn->rollback();
+        }
+    }
+
+    public function updatePhoto($rock_id, $filename, $tempname){
+        $query = "UPDATE tabhorniny SET fotka = :filename WHERE rock_ID = :rock_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':rock_id', $rock_id);
+        $stmt->bindParam(':filename', $filename);
+        $this->movePhoto($filename, $tempname);
+
+        try {
+            $update = $stmt->execute();
+            return $update;
+        } catch (\Exception $exception){
+            echo "Chyba pri updatovani fotky".$exception->getMessage();
+            $this->conn->rollback();
+        }
+
+    }
+    public function deleteRock($rock_id){
+        $query = "DELETE FROM tabhorniny WHERE rock_ID = :rock_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':rock_id', $rock_id);
+
+        try {
+            $delete = $stmt->execute();
+            return $delete;
+        } catch (\Exception $exception){
+            echo "Chyba pri odstranovani".$exception->getMessage();
+            $this->conn->rollback();
         }
     }
 }
