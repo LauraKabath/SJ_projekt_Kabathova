@@ -76,7 +76,9 @@ class Minerals extends Database {
             $mineralCards .= '<p class="card-text"><strong>Popis:</strong> ' . $mineral['popis'] . '</p>';
             $mineralCards .= '<p class="card-text"><strong>Použitie:</strong> ' . $mineral['pouzitie'] . '</p>';
             $mineralCards .= '<p class="card-text"><strong>Náleziská:</strong> ' . $mineral['naleziska'] . '</p>';
-            if ($this->isLoggedIn()) $mineralCards .= '<a href="update_mineral.php?id=' . $mineral['min_ID'] . '" class="link-secondary link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a>';
+            if ($this->isLoggedIn()) {
+                $mineralCards .= '<a href="update_mineral.php?id=' . $mineral['min_ID'] . '" class="link-secondary link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a>';
+            }
             $mineralCards .= '</div>';
             $mineralCards .= '</div>';
             $mineralCards .= '</div>';
@@ -109,7 +111,7 @@ class Minerals extends Database {
 
     public function updateMineral($mineral_id, $nazov, $zlozenie, $vzorec, $sustava, $popis, $pouzitie, $naleziska){
         $query = "UPDATE tabmineraly SET 
-        min_nazov = :nazov, chemzlozenie = :zlozenie, vzorec = :vzorec, krysustava :sustava, popis = :popis, pouzitie = :pouzitie, naleziska = :naleziska 
+        min_nazov = :nazov, chemzlozenie = :zlozenie, vzorec = :vzorec, krysustava = :sustava, popis = :popis, pouzitie = :pouzitie, naleziska = :naleziska 
         WHERE min_ID = :id";
 
         $stmt = $this->conn->prepare($query);
@@ -133,6 +135,22 @@ class Minerals extends Database {
 
     }
 
+    public function updatePhoto($mineral_id, $filename, $tempname){
+        $query = "UPDATE tabmineraly SET fotka = :filename WHERE min_ID = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $mineral_id);
+        $stmt->bindParam(':filename', $filename);
+        $this->movePhoto($filename, $tempname);
+
+        try {
+            $update = $stmt->execute();
+            return $update;
+        } catch (\Exception $exception){
+            echo "Chyba pri updatovani fotky".$exception->getMessage();
+            $this->conn->rollback();
+        }
+
+    }
     public function deleteMineral($mineral_id){
         $query = "DELETE FROM tabmineraly WHERE min_ID = :id";
         $stmt = $this->conn->prepare($query);
