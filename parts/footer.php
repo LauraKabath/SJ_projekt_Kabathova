@@ -6,7 +6,9 @@
                         <!-- zakladne info o stranke -->
                         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
                             <h6 class="text-uppercase fw-bold mb-4">Kto sme</h6>
-                            <p> KTO SME TEXT</p>
+                            <p> Vitajte na našej stránke zameranej na minerály a horniny!
+                                Okrem prezentácie rôznych minerálov, hornín a ich charakteristík, vám tiež umožňujeme prispievať svojimi vlastnými nálezmi.
+                            </p>
                         </div>
                         <!-- zakladne info o stranke -->
 

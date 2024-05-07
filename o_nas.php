@@ -4,125 +4,106 @@
         <main>
           <section>
             <h1 class="mx-2">O nás</h1>
-            <p class="mx-4">&emsp;Vitajte na našej stránke venovanej minerálom a horninám! Sme skupina nadšených milovníkov prírody a dobrodružstva, ktorí sa rozhodli zdieľať s vami pôvab týchto jedinečných nerastov.
-              Či už ste dobrodružný turista, vášnivý prírodovedec alebo jednoducho hľadáte únik do prírody, naša stránka vám poskytne:</p>
-              <!-- zoznam -->
-              <ul>
-                <li>užitočné informácie,</li>
-                <li>tipy na turistiku,</li>
-              </ul>
-              <!-- zoznam -->
-            <p class="mx-4">
-              &emsp;Spolu s nami sa vydajte na nezabudnuteľnú cestu!
-            </p>
-            <!-- akordeon -->
-                <div class="accordion mb-5" id="accordion">
-                    <div class="accordion-item mx-2">
-                      <button class="accordion-button collapsed bg-success bg-opacity-75 border border-success" type="button" data-bs-toggle="collapse" data-bs-target="#akord-one"><strong>Turistický tip</strong></button>
-                      <div id="akord-one" class="accordion-collapse collapse show" data-bs-parent="#accordion">
-                        <div class="accordion-text mx-4">
-                          <p>Milovníci turistiky a krásnej prírody si určite prídu na svoje návštevou <strong>Muránskej planiny. Nachádza sa v západnej časti Slovenského rudohoria.</strong> Stretávajú sa tu štyri geomorfologické celky. 
-                            Sú to <strong>Veporské vrchy, Spišsko-gemersky kras, Stolické vrchy a Horehronské podolie,</strong> čo vytvára veľmi pestrý reliéf. <strong>Fabova hoľa</strong> 1 439 m n.m. je najvyšším vrchom Muránskej planiny. 
-                            Na Muránskej planine sa určite oplatí vidieť <strong>Sysľovisko Biele vody pri Muráni</strong> a peknú turistiku ponúka aj návšteva takmer 360 m dlhého a 96 m širokého rumoviska <strong>Muránskeho hradu.</strong></p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item mx-2">
-                      <button class="accordion-button collapsed bg-success bg-opacity-50" type="button" data-bs-toggle="collapse" data-bs-target="#akord-two"><strong>Sysľovisko Biele vody pri Muráni</strong></button>
-                      <div id="akord-two" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                        <div class="accordion-text mx-4">
-                          <p>Sysľovisko sa nachádza 2,5 km severovýchodne od Muráňa v smere na Prednú Horu. 
-                            <strong>Autom</strong> sa sem dostanete po štátnej ceste č. 531 či už z obce Muráň, alebo z Prednej Hory. 
-                            <strong>Pešo z obce Muráň</strong> vedie chodník ľahkým terénom cez lúky, 2,5 km trasu sa dá zvládnuť za 30 minút. 
-                            Samozrejme sa da sem dostať aj <strong>bicyklom. 
-                            </strong> Tieto denné živočíchy sa dajú pozorovať iba počas dňa, so západom slnka zaliezajú do nory. 
-                            Sú to <strong>živočíchy slnka, </strong> preto sú najaktívnejšie počas slnečných dní.  
-                            Keďže sysľovisko sa nachádza vo voľnej prírode, je samozrejmosťou nerozhadzovať odpadky, neubližovať zvieratkám nevhodným správaním a samozrejme dodržiavať a prikrmovať ich vhodným krmivom.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item mx-2">
-                      <button class="accordion-button collapsed bg-success bg-opacity-25" type="button" data-bs-toggle="collapse" data-bs-target="#akord-three"><strong>Muránsky hrad</strong></button>
-                      <div id="akord-three" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                        <div class="accordion-text mx-4">
-                          <p>Z dedinky <strong>Muráň</strong> sem vedie náučný chodník. 
-                            Je to 6 km dlhá trasa, začína v obci Muráň ide o nenáročnú turistiku aj pre rodiny s aktívnejšími deťmi. 
-                            V centre obce vedľa obecného úradu je smerová tabuľa k hradu Muráň. 
-                            Odkiaľ vedie cesta až po Veľkú Lúku. 
-                            K Veľkej Lúke sa dá ísť aj autom, ale treba mať povolenie. 
-                            Odtiaľ však sa dá ísť len pešo po modrej turistickej trase. 
-                            Po červenej turistickej značke (cesta Márie Széchy) sa k chate pod hradom dostaneme asi za 1 – 1,5 hodiny. 
-                            Okrem tejto trasy sa sem dostanete tiež z Muránskej Huty na Piesky (cca 1.5 hodiny), alebo z Prednej hory k chate Zámok a odtiaľ na hrad a Poludnicu.</p>
-                          <p>V blízkosti hradu prechádza aj <strong>cyklotrasa, </strong> vedie z Muráňa, cez Veľkú lúku, až po Sedlo Javorinka. 
-                            Táto trasa ma charakter asfaltky. 
-                            Z Veľkej lúky sa dá po ďalšej cyklotrase prísť až k chate Zámok, pričom tento cyklochodník má charakter lesnej cesty.</p>
-                          <p>Na území hradu je možné vykonať okružnú prehliadku. Najlepšie výhľady na širšie okolie je možné uskutočniť <strong>z drevených plošín v severnej a južnej časti hradu.
-                          </strong> Uprostred múrov hradu Muráň sa nachádzajú zvyšky budov ako napr. stajne, hasičova miestnosť, hradná cisterna. 
-                            Informačné tabule zabezpečujú, aby si návštevníci urobili predstavu o usporiadaní života na hrade v minulosti. </p>  
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </section>
-            <!-- akordeon -->
+            <p class="mx-4">&emsp;Vitajte na našej stránke zameranej na minerály a horniny!
+                Sme váš spoľahlivý zdroj informácií o rôznych typoch minerálov a ich vlastnostiach.
+                Naša vášeň pre geológiu nás inšpirovala k vytvoreniu tejto platformy, kde môžete objavovať fascinujúci svet minerálov.</p>
 
-            <!-- tabulka
-            <div class="container mb-4">
-              <table class="table table-bordered border border-success text-center">
-                <thead>
-                  <tr class="table-success">
-                    <th>Charakteristika NP</th>
-                    <th>Popis</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>Poloha</th>
-                    <th><p>V južnej časti Slovenska, v strednej časti Slovenského krasu.</p></th>
-                  </tr>
-                  <tr>
-                    <th>Rozloha</th>
-                    <th><p>Národný park má rozlohu 203,18 km² a jeho ochranné pásmo 216,98 km², čo je spolu vyše 517 km².</p></th>
-                  </tr>
-                  <tr>
-                    <th>Nadmorská výška</th>
-                    <th><p>Priemerná nadmorská výška okolo 800 metrov, najvyšší vrch národného parku je Fábová hoľa s výškou 1 439 m n. m. a ešte vyšší vrch, Stolica s výškou 1 476 m n. m., je v ochrannom pásme. Najvyšším bodom horstva Muránska planina je vrch Kľak s výškou 1 408,7 m n. m. .</p></th>
-                  </tr>
-                  <tr>
-                    <th>Fauna</th>
-                    <th><p>Bohatá biodiverzita, vrátane sysľov, dravcov, vtákov a rôznych druhov rastlín.</p></th>
-                  </tr>
-                  <tr>
-                    <th>Flóra</th>
-                    <th><p>Charakterizovaná pestrosťou horskej kvetiny a zahŕňa 35 endemických a subendemických druhov, lesy pokrývajú asi 86% rozlohy NP.</p></th>
-                  </tr>
-                  <tr>
-                    <th>Turistika</th>
-                    <th><p>Síce dostupná aj pre menej skúsených turistov, ale ponúka aj náročné trekové trasy, 300 km označených chodníkov a náučných trás.</p></th>
-                  </tr>
-                  <tr>
-                    <th>História</th>
-                    <th><p>Súčasťou Národného parku Muránska planina, s historickými pamiatkami, ako je hrad Muráň.</p></th>
-                  </tr>
-                  <tr>
-                    <th>Aktivity</th>
-                    <th><p>Turistika, horská cyklistika, pozorovanie vtákov, fotografovanie prírody.</p></th>
-                  </tr>
-                  <tr>
-                    <th>Geologické zloženie</th>
-                    <th><p>Vápence, dolomity, je tu viac ako 250 jaskýň, ktoré nie sú prístupné verejnosti. Najrozsiahlejší jaskynný systém je Bobačka, ktorej dĺžka je 3 km, v NP sa nachádza 15 priepastí a viac ako 50 ponorov a vyvieračiek a mnohé krasové a skalnaté útvary.</p></th>
-                  </tr>
-                  <tr>
-                    <th>Prístup</th>
-                    <th><p>Dobre označené turistické trasy a cyklotrasy, možnosť parkovania pri vstupoch na planinu.</p></th>
-                  </tr>
-                  <tr>
-                    <th>Ubytovanie</th>
-                    <th><p>Okolité obce ponúkajú rôzne možnosti ubytovania, od horských chát po rodinné penzióny.</p></th>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-             tabulka -->
+            <p class="mx-4">
+              &emsp;Okrem prezentácie rôznych minerálov, hornín a ich charakteristík, vám tiež umožňujeme prispievať svojimi vlastnými nálezmi.
+                Stačí sa prihlásiť a budete mať prístup k možnosti pridávať svoje vlastné minerály a horniny,
+                čím sa stávate súčasťou našej komunity.
+                Vaše príspevky pomáhajú rozšíriť našu databázu a zdieľať poznatky s ďalšími nadšencami.
+            </p>
+              <p class="mx-4">
+                  &emsp;Dúfame, že sa vám naša stránka páči a že vám pomôže objaviť nové a zaujímavé aspekty sveta minerálov.
+              </p>
+              <p class="mx-4">
+                  &emsp;Ďakujeme, že ste s nami!
+              </p>
+              <div class="container">
+                  <h2>Mohsova stupnica tvrdosti</h2>
+                    <div class="accordion mb-5" id="accordion">
+                        <div class="accordion-item mx-2">
+                            <button class="accordion-button collapsed bg-secondary bg-opacity-50 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#akord-one"><strong>1. Talk/Mastenec</strong></button>
+                            <div id="akord-one" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                <div class="accordion-text mx-4">
+                                    <p>Talk/Mastenec je minerál s tvrdosťou 1 na Mohsonovej stupnici. Je to mäkký minerál, často výskytovaný v pórovitých agregátoch.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mx-2">
+                            <button class="accordion-button collapsed bg-secondary bg-opacity-25 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#akord-two"><strong>2. Sadrovec</strong></button>
+                            <div id="akord-two" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                <div class="accordion-text mx-4">
+                                    <p>Sadrovec je minerál s tvrdosťou 2 na Mohsonovej stupnici. Vo vode je nerozpustný, tvorí krásne kryštály.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mx-2">
+                            <button class="accordion-button collapsed bg-secondary bg-opacity-50 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#akord-three"><strong>3. Kalcit</strong></button>
+                            <div id="akord-three" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                <div class="accordion-text mx-4">
+                                    <p>Kalcit je minerál s tvrdosťou 3 na Mohsonovej stupnici. Je to jedna z najbežnejších foriem vápenca, používa sa ako stavebný kameň.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mx-2">
+                            <button class="accordion-button collapsed bg-secondary bg-opacity-25 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#akord-four"><strong>4. Fluorit</strong></button>
+                            <div id="akord-four" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                <div class="accordion-text mx-4">
+                                    <p> Fluorit je minerál s tvrdosťou 4 na Mohsonovej stupnici. Je to farebný minerál, používaný v klenotníctve a ako prídavný materiál v metalurgii.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mx-2">
+                            <button class="accordion-button collapsed bg-secondary bg-opacity-50 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#akord-five"><strong>5. Apatit</strong></button>
+                            <div id="akord-five" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                <div class="accordion-text mx-4">
+                                    <p> Apatit má tvrdosť 5 na Mohsonovej stupnici. Je to fosfátový minerál, ktorý sa často vyskytuje vo fosílnych zuboch a kostiach.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mx-2">
+                            <button class="accordion-button collapsed bg-secondary bg-opacity-25 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#akord-six"><strong>6. Ortoklas</strong></button>
+                            <div id="akord-six" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                <div class="accordion-text mx-4">
+                                    <p>Ortoklas patrí medzi minerály s tvrdosťou 6 na Mohsonovej stupnici. Je to bežný minerál v žulách a iných rôznych horninách.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mx-2">
+                            <button class="accordion-button collapsed bg-secondary bg-opacity-50 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#akord-seven"><strong>7. Kremeň</strong></button>
+                            <div id="akord-seven" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                <div class="accordion-text mx-4">
+                                    <p>Kremeň je minerál s tvrdosťou 7 na Mohsonovej stupnici. Jeho fyzikálne a chemické vlastnosti robia z kremenia dôležitý materiál v priemysle, používa sa napríklad vo výrobe skla, keramiky a elektronických súčiastok.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mx-2">
+                            <button class="accordion-button collapsed bg-secondary bg-opacity-25 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#akord-eight"><strong>8. Topáz</strong></button>
+                            <div id="akord-eight" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                <div class="accordion-text mx-4">
+                                    <p>Topáz má tvrdosť 8 na Mohsonovej stupnici. Je to drahý kameň, ktorý sa často používa v šperkárstve.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mx-2">
+                            <button class="accordion-button collapsed bg-secondary bg-opacity-50 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#akord-nine"><strong>9. Korund</strong></button>
+                            <div id="akord-nine" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                <div class="accordion-text mx-4">
+                                    <p>Korund je minerál s tvrdosťou 9 na Mohsonovej stupnici. Je to jeden z najtvrdších známych minerálov, a diamant ho len mierne prekonáva.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mx-2">
+                            <button class="accordion-button collapsed bg-secondary bg-opacity-25 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#akord-ten"><strong>10. Diamant</strong></button>
+                            <div id="akord-ten" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                <div class="accordion-text mx-4">
+                                    <p>Diamant patrí medzi minerály s tvrdosťou 10 na Mohsonovej stupnici. Je to najtvrdší známy minerál, používaný nielen v šperkárstve, ale aj v priemyselnom odvetví.</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+              </div>
         </main>
     <?php include "parts/footer.php"?>

@@ -17,10 +17,6 @@ if (!$rock){
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="fotka">Obrázok:</label>
-                            <input class="form-control" type="file" name="uploadfile" value="">
-                        </div>
-                        <div class="form-group">
                             <label for="nazov">Názov horniny:</label>
                             <input type="text" class="form-control" id="nazov" name="nazov" required>
                         </div>
@@ -61,8 +57,44 @@ if (!$rock){
                     $naleziska = $_POST['naleziska'];
 
                 }
+                if (isset($_POST['deleteRock'])){
+                    /*
+                    if ($rockObject->deleteRock($rock_id)){
+                        echo "Hornina bola vymazaná";
+                    } else {
+                        echo "Nastala chyba pri vymazávaní horniny";
+                    }*/
+                }
                 ?>
             </form>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h3>Zmena fotky:</h3>
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="fotka">Obrázok:</label>
+                                <input class="form-control" type="file" name="uploadfile" value="">
+                            </div>
+                            <button type="submit" name="changePhoto" class="btn btn-secondary">Upload</button>
+                            <?php
+                            if (isset($_POST['changePhoto'])){
+                                $filename = $_FILES["uploadfile"]["name"];
+                                $tempname = $_FILES["uploadfile"]["tmp_name"];
+
+                                if ($rockObject->updatePhoto($rock_id, $filename, $tempname)){
+                                    echo "Fotka bola úspešne updatovaná!";
+                                } else {
+                                    echo "Nastala chyba pri updatovaní fotky";
+                                }
+                            }
+                            ?>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 <?php include "parts/footer.php"?>

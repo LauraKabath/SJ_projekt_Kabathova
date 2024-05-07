@@ -73,7 +73,7 @@
                         if ($mineralObject->deleteMineral($mineral_id)){
                             echo "Minerál bol vymazaný";
                         } else {
-                            echo "Nastaal chyba pri vymazávaní minerálu";
+                            echo "Nastala chyba pri vymazávaní minerálu";
                         }*/
                     }
                     ?>
