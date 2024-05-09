@@ -63,18 +63,17 @@
                         $naleziska = $_POST['naleziska'];
 
                         if ($mineralObject->updateMineral($mineral_id, $nazov, $zlozenie, $vzorec, $sustava, $popis, $pouzitie, $naleziska)){
-                            echo "Mineral bol úspešne updatovaný";
+                            echo "Minerál bol úspešne updatovaný";
                         } else {
                             echo "Nastala chyba pri updatovaní minerálu";
                         }
                     }
-                    if (isset($_POST['deleteMineral'])){
-                        /*
-                        if ($mineralObject->deleteMineral($mineral_id)){
+                    if (isset($_POST['deleteMineral'])) {
+                        if ($mineralObject->deleteMineral($mineral_id)) {
                             echo "Minerál bol vymazaný";
                         } else {
                             echo "Nastala chyba pri vymazávaní minerálu";
-                        }*/
+                        }
                     }
                     ?>
                 </form>
