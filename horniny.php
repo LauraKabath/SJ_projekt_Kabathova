@@ -29,7 +29,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="zasMineraly">Zastúpenie minerálov v hornine:</label>
-                                <input type="text" class="form-control" id="zasMineraly" name="zasMineraly">
+                                <textarea class="form-control" id="zasMineraly" name="zasMineraly" rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="stavba">Stavba horniny:</label>
