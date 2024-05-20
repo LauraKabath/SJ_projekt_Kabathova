@@ -39,9 +39,9 @@
                                 <label for="naleziska">Výskyty:</label>
                                 <textarea class="form-control" id="naleziska" name="naleziska" rows="3"></textarea>
                             </div>
-                            <button type="submit" name="submitMineral" class="btn btn-secondary">Odoslať</button>
+                            <button type="submit" name="submitRock" class="btn btn-secondary">Odoslať</button>
                             <?php
-                            if (isset($_POST['submitMineral'])){
+                            if (isset($_POST['submitRock'])){
                                 $nazov = $_POST['nazov'];
                                 $zaradenie = $_POST['zaradenie'];
                                 $farba = $_POST['farba'];

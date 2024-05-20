@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php include_once "parts/head.php" ?>
     <body>
 <?php include "parts/navigacia.php" ?>
@@ -14,6 +15,7 @@ if (!$rock){
     <main>
         <section>
             <div class="container my-5">
+                <h5><a href="horniny.php" class="link-secondary link-underline-opacity-100-hover">Naspäť<i class="fa fa-angle-double-left"></i></a></h5>
                 <form action="" method="POST">
                     <div class="row justify-content-center">
                         <div class="col-md-6">
@@ -43,7 +45,7 @@ if (!$rock){
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="updateRock" class="btn btn-secondary">Update</button>
-                                <button type="submit" name="deleteRock" class="btn btn-danger">Delete</button>
+                                <button type="submit" name="deleteRock" class="btn btn-danger" onclick="confirmDelete(<?php echo $rock['rock_ID']; ?>)">Delete</button>
                             </div>
 
                         </div>
@@ -61,6 +63,7 @@ if (!$rock){
                     if (isset($_POST['deleteRock'])){
                         if ($rockObject->deleteRock($rock_id)){
                             echo "Hornina bola vymazaná";
+                            header('Location: horniny.php');
                         } else {
                             echo "Nastala chyba pri vymazávaní horniny";
                         }
@@ -99,3 +102,4 @@ if (!$rock){
         </section>
     </main>
 <?php include "parts/footer.php"?>
+<?php ob_end_flush(); ?>

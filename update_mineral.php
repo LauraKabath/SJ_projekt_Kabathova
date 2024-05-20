@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php include_once "parts/head.php" ?>
     <body>
 <?php include "parts/navigacia.php" ?>
@@ -14,6 +15,7 @@
     <main>
         <section>
             <div class="container my-5">
+                <h5><a href="mineraly.php" class="link-secondary link-underline-opacity-100-hover">Naspäť<i class="fa fa-angle-double-left"></i></a></h5>
                 <form action="" method="POST">
                     <div class="row justify-content-center">
                         <div class="col-md-6">
@@ -48,7 +50,7 @@
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="updateMineral" class="btn btn-secondary">Update</button>
-                                <button type="submit" name="deleteMineral" class="btn btn-danger">Delete</button>
+                                <button type="submit" name="deleteMineral" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -71,6 +73,7 @@
                     if (isset($_POST['deleteMineral'])) {
                         if ($mineralObject->deleteMineral($mineral_id)) {
                             echo "Minerál bol vymazaný";
+                            header('Location: mineraly.php');
                         } else {
                             echo "Nastala chyba pri vymazávaní minerálu";
                         }
@@ -109,3 +112,4 @@
         </section>
     </main>
 <?php include "parts/footer.php"?>
+<?php ob_end_flush(); ?>

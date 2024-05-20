@@ -15,12 +15,12 @@ class Page {
             case 'kontakt':
                 $css .= '<link rel="stylesheet" href="css/kontakt.css">';
                 break;
-
             case 'thank_you':
                 $css .= '<link rel="stylesheet" href="css/thankyou.css">';
                 break;
+            case 'password_change':
             case 'prihlasenie':
-                $css .= '<link rel="stylesheet" href="css/loginCards.css">';
+                $css .= '<link rel="stylesheet" href="css/cards.css">';
                 break;
         }
 

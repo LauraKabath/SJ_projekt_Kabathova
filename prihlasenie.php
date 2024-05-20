@@ -28,7 +28,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                                 <div class="prihlasenie-form">
                                     <form action="" method="POST">
                                         <div class="form-group">
-                                            <label for="meno" class="label">Meno: </label>
+                                            <label for="meno" class="label">Prihlasovacie meno: </label>
                                             <input name="meno" id="meno" type="text" class="form-control">
                                         </div>
                                         <div class="form-group">
@@ -70,7 +70,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                                 <div class="registracia-form">
                                     <form action="" method="POST">
                                         <div class="form-group">
-                                            <label for="meno" class="label">Meno: </label>
+                                            <label for="meno" class="label">Prihlasovacie meno: </label>
                                             <input name="meno" id="meno" type="text" class="form-control">
                                         </div>
                                         <div class="form-group">

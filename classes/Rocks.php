@@ -12,13 +12,13 @@ class Rocks extends Database {
         try {
             $this->conn->beginTransaction();
             if (!move_uploaded_file($tempname, $folder)){
-                throw new Exception("Súbor sa nepodarilo premiestniť");
+                throw new Exception("Súbor sa nepodarilo premiestniť<br>");
             }
             $this->conn->commit();
             return true;
         } catch (\Exception $exception){
             $this->conn->rollback();
-            echo "Chyba pri vkladani fotky".$exception->getMessage();
+            echo "Chyba pri vkladani fotky<br>".$exception->getMessage();
             return false;
         }
 
@@ -52,7 +52,7 @@ class Rocks extends Database {
     }
 
     public function selectRock(){
-        $query = "SELECT * FROM tabhorniny";
+        $query = "SELECT * FROM tabhorniny ORDER BY rock_nazov";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $rocks = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -61,11 +61,11 @@ class Rocks extends Database {
         $count = 0;
 
         foreach ($rocks as $rock){
-            if ($count % 4 == 0 && $count != 0) {
+            if ($count % 3 == 0 && $count != 0) {
                 $rockCards .= '</div><div class="row">';
             }
 
-            $rockCards .= '<div class="col-md-4">';
+            $rockCards .= '<div class="col-md-4 my-3">';
             $rockCards .= '<div class="card">';
             $rockCards.= '<img src="uploadRock/' . $rock['fotka'] . '" class="card-img-top" alt="HorninaFotka">';
             $rockCards .= '<div class="card-body">';
@@ -75,7 +75,9 @@ class Rocks extends Database {
             $rockCards .= '<p class="card-text"><strong>Zastúpenie minerálov v hornine:</strong> ' . $rock['zas_min'] . '</p>';
             $rockCards .= '<p class="card-text"><strong>Stavba:</strong> ' . $rock['stavba'] . '</p>';
             $rockCards .= '<p class="card-text"><strong>Náleziská:</strong> ' . $rock['naleziska'] . '</p>';
-            if ($this->isLoggedIn()) $rockCards .= '<a href="update_rock.php?id=' . $rock['rock_ID'] . '" class="link-secondary link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a>';
+            if ($this->isLoggedIn()) {
+                $rockCards .= '<a href="update_rock.php?id=' . $rock['rock_ID'] . '" class="link-secondary link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a>';
+            }
             $rockCards.= '</div>';
             $rockCards .= '</div>';
             $rockCards .= '</div>';

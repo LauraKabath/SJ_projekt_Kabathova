@@ -12,13 +12,13 @@ class Minerals extends Database {
         try {
             $this->conn->beginTransaction();
             if (!move_uploaded_file($tempname, $folder)){
-                throw new Exception("Súbor sa nepodarilo premiestniť");
+                throw new Exception("Súbor sa nepodarilo premiestniť<br>");
             }
             $this->conn->commit();
             return true;
         } catch (\Exception $exception){
             $this->conn->rollback();
-            echo "Chyba pri vkladani fotky".$exception->getMessage();
+            echo "Chyba pri vkladani fotky<br>".$exception->getMessage();
             return false;
         }
 
@@ -51,7 +51,7 @@ class Minerals extends Database {
     }
 
     public function selectMineral(){
-        $query = "SELECT min_nazov, chemzlozenie, vzorec, krysustava, popis, pouzitie, naleziska, fotka, min_ID FROM tabmineraly ";
+        $query = "SELECT min_nazov, chemzlozenie, vzorec, krysustava, popis, pouzitie, naleziska, fotka, min_ID FROM tabmineraly ORDER BY min_nazov";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $minerals = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -61,11 +61,11 @@ class Minerals extends Database {
         $count = 0;
 
         foreach ($minerals as $mineral){
-            if ($count % 4 == 0 && $count != 0) {
+            if ($count % 3 == 0 && $count != 0) {
                 $mineralCards .= '</div><div class="row">';
             }
 
-            $mineralCards .= '<div class="col-md-4">';
+            $mineralCards .= '<div class="col-md-4 my-3">';
             $mineralCards .= '<div class="card">';
             $mineralCards .= '<img src="upload/' . $mineral['fotka'] . '" class="card-img-top" alt="MineralFotka">'; //htmlspecialchars($mineral['fotka'])
             $mineralCards .= '<div class="card-body">';

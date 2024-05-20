@@ -17,7 +17,7 @@ $userData = $user->getUserInfo($_SESSION['user_id']);
                             <h4 class="card-title">Zmena hesla</h4>
                             <form action="" method="POST">
                                 <div class="form-group">
-                                    <label for="oldPassword" class="label">Staré heslo:</label>
+                                    <label for="oldPassword" class="label">Staré heslo: </label>
                                     <div class="password-input">
                                         <input name="oldPassword" id="oldPassword" type="password" class="form-control" value="">
                                         <span class="toggle-password" onclick="togglePasswordVisibility('oldPassword')">Show</span>
@@ -31,7 +31,7 @@ $userData = $user->getUserInfo($_SESSION['user_id']);
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="ReapeatedNew" class="label">Zopakujte heslo:</label>
+                                    <label for="ReapeatedNew" class="label">Zopakujte heslo: </label>
                                     <div class="password-input">
                                         <input name="ReapeatedNew" id="ReapeatedNew" type="password" class="form-control" value="">
                                         <span class="toggle-password" onclick="togglePasswordVisibility('ReapeatedNew')">Show</span>
@@ -48,6 +48,7 @@ $userData = $user->getUserInfo($_SESSION['user_id']);
                                     $id = $userData['uzi_ID'];
                                     if ($user->changePassword($id, $oldPassword, $NewPassword, $ReapeatedNew)){
                                         echo "Vaše heslo bolo úspešne zmenené!";
+                                        echo '<a href="dashboard.php" class="link-secondary link-underline-opacity-25 link-underline-opacity-100-hover">Späť na profil</a>';
                                     } else {
                                         echo "Nastala chyba pri zmene vášho hesla";
                                     }

@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="form-group"> 
                                     <label for="submit"></label><br>
-                                    <input id="submit" name="submit" type="submit" value="Odoslať" class="btn rounded-3"><br>
+                                    <input id="submit" name="submit" type="submit" value="Odoslať" class="btn rounded-3" onclick="validate()"><br>
                                 </div>
                                 <?php
                                 if (isset($_POST['submit'])) {
